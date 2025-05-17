@@ -114,6 +114,29 @@ class EmailAssistant:
             'total_matches': len(similar_emails)
         }
     
+    def generate_ai_response(self, responses: list, sender: str, subject, content) -> str:
+        '''This function generates a response using OpenAI's API, sends
+           the responses to the model, and returns the generated response.'''
+        if not responses:
+            return "No tengo una respuesta sugerida para este correo."
+        try:
+            prompt = f"Responde al siguiente correo:\n\nDe: {sender}\nAsunto: {subject}\n\n{content}\n\nRespuestas sugeridas:\n"
+            for i, response in enumerate(responses):
+                prompt += f"{i + 1}. {response}\n"
+            prompt += "\nPersonaliza la respuesta cin un estilo como los ejemplos:\n"
+            
+            response = self.openai.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=150,
+                n=1,
+                stop=None
+            )
+            return response.choices[0].message['content']
+        except Exception as e:
+            print(f"Error generando respuesta AI: {e}")
+            return self.generate_response(responses, sender)    
+
     def generate_response(self, responses: list, sender: str) -> str:
         if not responses:
             return "No tengo una respuesta sugerida para este correo."
@@ -149,9 +172,11 @@ class EmailAssistant:
                 'input': {'sender': sender, 'subject': subject}
             }
         
-        suggested_response = self.generate_response(
+        suggested_response = self.generate_ai_response(
             analysis.get('suggested_responses', []),
-            sender
+            sender,
+            subject,
+            content
         )
         
         return {
