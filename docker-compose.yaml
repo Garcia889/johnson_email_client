@@ -1,0 +1,10 @@
+version: "3"
+services:
+  api:
+    build: ./API
+    #command: bash -c 'while !</dev/tcp/postgres/5432; do sleep 1; done; uvicorn app.main:app --host 0.0.0.0'
+    ports:
+      - 8000:8000
+    
+    
+
