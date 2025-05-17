@@ -8,6 +8,12 @@ services:
       - .env  # Referencia al archivo .env
     environment:
       - PINECONE_INDEX_NAME=banquetes-emails
+      - CORS_ORIGINS=http://localhost:8080
     
-    
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - api
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oak Email Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Oak e-mail helper</h1>
+            <p>Select emails from your inbox, edit text, and see the processed results</p>
+        </header>
+
+        <div class="layout">
+            <aside class="sidebar">
+                <h2>Gmail Inbox</h2>
+                <ul class="email-list">
+                    <li class="email-item" data-sender="john.doe@example.com" data-subject="Meeting Request" data-content="Hi, I'd like to schedule a meeting to discuss the project updates. Please let me know your availability.">
+                        <strong>john.doe@example.com</strong>
+                        <span>2025-05-15</span>
+                        <em>Meeting Request</em>
+                    </li>
+                    <li class="email-item" data-sender="marketing@company.com" data-subject="Campaign Update" data-content="Here's the latest update on our marketing campaign. We've seen a 15% increase in engagement.">
+                        <strong>marketing@company.com</strong>
+                        <span>2025-05-14</span>
+                        <em>Campaign Update</em>
+                    </li>
+                    <li class="email-item" data-sender="support@service.com" data-subject="Your Recent Ticket" data-content="Regarding your recent support ticket #45678, we've resolved the issue. Please confirm if everything is working now.">
+                        <strong>support@service.com</strong>
+                        <span>2025-05-13</span>
+                        <em>Your Recent Ticket</em>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="content">
+                <section class="input-section">
+                    <h2>Input</h2>
+                    <p><em>Paste your text here or select an email from the sidebar...</em></p>
+                    <div class="email-form">
+                        <div class="form-group">
+                            <label for="sender">From:</label>
+                            <input type="text" id="sender" placeholder="sender@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject:</label>
+                            <input type="text" id="subject" placeholder="Email subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="content">Content:</label>
+                            <textarea id="content" rows="8" placeholder="Email content..."></textarea>
+                        </div>
+                        <button id="process-btn">Process Email</button>
+                    </div>
+                </section>
+
+                <section class="results-section">
+                    <h2>Recommended classification and response</h2>
+                    <div id="results">
+                        <p class="placeholder">Results will appear here after processing</p>
+                        <div id="classification-result" class="hidden">
+                            <h3>Classification</h3>
+                            <div class="classification-details"></div>
+                            <h3>Suggested Response</h3>
+                            <div class="suggested-response"></div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
