@@ -65,13 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <p><strong>Main Category:</strong> <span class="category-tag">${data.classification.main_category}</span></p>
             <p><strong>Confidence:</strong> <span class="confidence ${data.classification.is_confident ? '' : 'low-confidence'}">${(data.classification.confidence * 100).toFixed(1)}%</span></p>
             ${data.classification.is_confident ? '' : '<p class="warning">⚠️ Low confidence in classification</p>'}
-            ${Object.keys(data.classification.all_categories).length > 1 ? 
-                `<p><strong>Other Categories:</strong><br>${Object.entries(data.classification.all_categories)
-                    .filter(([cat]) => cat !== data.classification.main_category)
-                    .map(([cat, score]) => `${cat} (${(score * 100).toFixed(1)}%)`)
-                    .join(', ')}</p>` : ''}
-            <p><strong>Based on:</strong> ${data.response.based_on_n_examples} similar examples</p>
-            <p><strong>Average similarity:</strong> ${data.response.average_similarity.toFixed(2)}</p>
+            <p><strong>Summary:</strong> <span class="category-tag">${data.classification.summary}</span></p>
+            </p>
         `;
         
         // Suggested response

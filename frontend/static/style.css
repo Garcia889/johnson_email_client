@@ -4,7 +4,12 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-image: url("Hermes_blue.jpg");
+    background-repeat: no-repeat;       /* Evita que se repita */
+    background-size: cover;             /* Cubre todo el fondo */
+    background-position: center;
+    background-attachment: fixed; 
+    background-color: transparent;
 }
 
 .container {

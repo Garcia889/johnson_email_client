@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oak Email Helper</title>
+    <title>Hermes mail</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
-        <header>
-            <h1>Oak e-mail helper</h1>
-            <p>Select emails from your inbox, edit text, and see the processed results</p>
+        <header style="text-align: left;"></header>
+            <h1 style="margin-bottom: 5px;">Hermes mail assistant</h1>
+            <p>Select emails from your inbox and get AI-powered assistance to craft personalized responses</p>
         </header>
 
         <div class="layout">
@@ -22,23 +23,27 @@
                         <span>2025-05-15</span>
                         <em>Cotización boda</em>
                     </li>
-                    <li class="email-item" data-sender="dudosa@company.com" data-subject="Podemos agregar menús veganos" data-content="Estimada Anahi, me gustaría saber si es posible agregar opciones de menú vegano para 2 personas a mi boda, evento #276348. Gracias.">
-                        <strong>marketing@company.com</strong>
-                        <span>2025-05-14</span>
-                        <em>Campaign Update</em>
+                    <li class="email-item" data-sender="amanda@hotmail.com" data-subject="Podemos hacer cambios a menú?" data-content="Para el evento del 15/09 (EV-3256), tenemos 3 invitados con alergias: 2 celíacos y 1 alérgico a mariscos. ¿Podrían preparar opciones especiales?">
+                        <strong>amanda@hotmail.com</strong>
+                        <span>2025-05-17</span>
+                        <em>Duda menú</em>
                     </li>
-                    <li class="email-item" data-sender="support@service.com" data-subject="Your Recent Ticket" data-content="Regarding your recent support ticket #45678, we've resolved the issue. Please confirm if everything is working now.">
-                        <strong>support@service.com</strong>
+                    <li class="email-item" data-sender="cmendoza@gmail.com" data-subject="Solicitud de presupuesto boda" data-content="Estimados señores de Four Seasons:\n\nMi prometida y yo estamos planeando nuestra boda para el próximo 12 de diciembre. Después de visitar varios lugares, consideramos que su hotel sería perfecto para nuestro día especial. Quisiéramos recibir una cotización contemplando los siguientes aspectos:\n\n* Ceremonia y recepción para 80 personas\n* Jardín para la ceremonia y salón para la recepción\n* Menú de gala de tres tiempos\n* Barra abierta por 6 horas\n* Mesa de postres y pastel de boda\n* Conjunto musical para la ceremonia y DJ para la recepción\n\nAdicionalmente, nos gustaría reservar la suite nupcial para esa noche y algunas habitaciones para familiares que vienen del extranjero.\n\nEsperamos su propuesta.\n\nSaludos cordiales,\n\nCarlos Mendoza\ncarlos.mendoza@outlook.com\n+52 55 6677 8899">
+                        <strong>scmendoza@gmail.com</strong>
                         <span>2025-05-13</span>
-                        <em>Your Recent Ticket</em>
+                        <em>Solicitud de presupuesto boda</em>
+                    </li>
+                    <li class="email-item" data-sender="operaciones@fourseasons.com" data-subject="Asignación equipo para boda #EV-4562" data-content="Equipo, para la boda del 12/10 (EV-4562) necesitamos: 5 meseros, 2 bartenders y 1 supervisor. María será la coordinadora principal. Favor confirmar disponibilidad. Revisar checklist adjunto.">
+                        <strong>operaciones@fourseasons.com</strong>
+                        <span>2025-05-18</span>
+                        <em>Asignación equipo para boda #EV-4562</em>
                     </li>
                 </ul>
             </aside>
 
             <main class="content">
                 <section class="input-section">
-                    <h2>Input</h2>
-                    <p><em>Paste your text here or select an email from the sidebar...</em></p>
+                    <h2>E-mail</h2>
                     <div class="email-form">
                         <div class="form-group">
                             <label for="sender">From:</label>
@@ -52,7 +57,7 @@
                             <label for="content">Content:</label>
                             <textarea id="content" rows="8" placeholder="Email content..."></textarea>
                         </div>
-                        <button id="process-btn">Process Email</button>
+                        <button id="process-btn" style="background-color: #006400; color: white;">Process Email</button>
                     </div>
                 </section>
 
@@ -61,7 +66,7 @@
                     <div id="results">
                         <p class="placeholder">Results will appear here after processing</p>
                         <div id="classification-result" class="hidden">
-                            <h3>Classification</h3>
+                            <h3>Classification and summary</h3>
                             <div class="classification-details"></div>
                             <h3>Suggested Response</h3>
                             <div class="suggested-response"></div>

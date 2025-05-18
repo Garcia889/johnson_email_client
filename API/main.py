@@ -116,26 +116,26 @@ class EmailAssistant:
     
     def generate_ai_response(self, responses: list, sender: str, subject, content) -> str:
         '''This function generates a response using OpenAI's API, sends
-           the responses to the model, and returns the generated response.'''
+        the responses to the model, and returns the generated response.'''
         if not responses:
             return "No tengo una respuesta sugerida para este correo."
         try:
             prompt = f"Responde al siguiente correo:\n\nDe: {sender}\nAsunto: {subject}\n\n{content}\n\nRespuestas sugeridas:\n"
             for i, response in enumerate(responses):
                 prompt += f"{i + 1}. {response}\n"
-            prompt += "\nPersonaliza la respuesta cin un estilo como los ejemplos:\n"
-            
+            prompt += "\nPersonaliza la respuesta con un estilo parecido a los ejemplos pero con formato adecuado para e-mail, quita asteriscos y símbolos innecesarios\n"
+
             response = self.openai.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4-turbo",
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=150,
+                max_tokens=850,
                 n=1,
                 stop=None
             )
-            return response.choices[0].message['content']
+            return response.choices[0].message.content
         except Exception as e:
             print(f"Error generando respuesta AI: {e}")
-            return self.generate_response(responses, sender)    
+            return self.generate_response(responses, sender)  
 
     def generate_response(self, responses: list, sender: str) -> str:
         if not responses:
@@ -166,6 +166,23 @@ class EmailAssistant:
         similar_emails = self.query_similar_emails(sender, subject, content)
         analysis = self.analyze_results(similar_emails)
         
+        # Genera un resumen del contenido usando OpenAI
+        try:
+            summary_prompt = f"Resume brevemente el siguiente correo \n\n{content}\n\n Regresa respuesta en español"
+            summary_response = self.openai.chat.completions.create(
+                model="gpt-4-turbo",
+                messages=[{"role": "user", "content": summary_prompt}],
+                max_tokens=120,
+                n=1,
+                stop=None
+            )
+            summary = summary_response.choices[0].message.content.strip()
+        except Exception as e:
+            print(f"Error generando resumen: {e}")
+            summary = ""
+
+        analysis['summary'] = summary
+        
         if not analysis:
             return {
                 'error': 'No se encontraron correos similares en la base de datos',
@@ -189,7 +206,8 @@ class EmailAssistant:
                 'main_category': analysis['main_category'],
                 'confidence': analysis['confidence'],
                 'is_confident': analysis['confidence'] >= self.CONFIDENCE_THRESHOLD,
-                'all_categories': analysis['categories']
+                'all_categories': analysis['categories'],
+                'summary': analysis['summary']
             },
             'response': {
                 'suggested': suggested_response,
