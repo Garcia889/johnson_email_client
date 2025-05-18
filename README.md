@@ -1,6 +1,7 @@
 # 📧 Johnson email client - Documentación
 
-Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere respuestas usando IA. Se llama Johnson como uno de los agentes de Matrix
+Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere respuestas usando IA.  
+Se llama Johnson como uno de los agentes de Matrix.
 
 ## 🚀 Características principales
 
@@ -18,7 +19,8 @@ Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere
   - OpenAI (embeddings)
 
 ## 🏗 Estructura del proyecto
-oak-email-assistant/  
+```
+johnson_email_client/  
 ├── api/ # Servicio FastAPI  
 │ ├── main.py # Lógica principal  
 │ ├── Dockerfile # Configuración Docker  
@@ -30,7 +32,7 @@ oak-email-assistant/
 │  
 ├── docker-compose.yml # Orquestación  
 └── .env.example # Variables de entorno  
-
+```
 
 ## 🚀 Instalación
 
