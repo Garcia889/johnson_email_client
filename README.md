@@ -28,6 +28,9 @@ johnson_email_client/
 │  
 ├── frontend/ # Interfaz web  
 │ ├── static/ # Archivos estáticos  
+│ │ ├── index.html
+│ │ ├── script.js
+│ │ └── style.css
 │ └── Dockerfile # Configuración Docker  
 │  
 ├── docker-compose.yml # Orquestación  
@@ -113,7 +116,7 @@ docker-compose down
 📊 Arquitectura
 
 <div align="center">
-    <img src="./images/Arquitectura.png" alt="Arquitectura del sistema" width="200">
+    <img src="./images/Arquitectura.png" alt="Arquitectura del sistema" width="300">
 </div>
 
 🤝 Contribución  
