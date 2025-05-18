@@ -1,8 +1,6 @@
-# 📧 Oak Email Assistant - Documentación
+# 📧 Johnson email client - Documentación
 
-![Oak Email Assistant](https://i.imgur.com/JK7w3Zy.png)
-
-Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere respuestas usando IA.
+Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere respuestas usando IA. Se llama Johnson como uno de los agentes de Matrix
 
 ## 🚀 Características principales
 
@@ -20,19 +18,19 @@ Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere
   - OpenAI (embeddings)
 
 ## 🏗 Estructura del proyecto
-oak-email-assistant/
-├── api/ # Servicio FastAPI
-│ ├── main.py # Lógica principal
-│ ├── Dockerfile # Configuración Docker
-│ └── requirements.txt # Dependencias Python
-│
-├── frontend/ # Interfaz web
-│ ├── static/ # Archivos estáticos
-│ ├── Dockerfile # Configuración Docker
-│ └── nginx.conf # Configuración Nginx
-│
-├── docker-compose.yml # Orquestación
-└── .env.example # Variables de entorno
+oak-email-assistant/  
+├── api/ # Servicio FastAPI  
+│ ├── main.py # Lógica principal  
+│ ├── Dockerfile # Configuración Docker  
+│ └── requirements.txt # Dependencias Python  
+│  
+├── frontend/ # Interfaz web  
+│ ├── static/ # Archivos estáticos  
+│ └── Dockerfile # Configuración Docker  
+│  
+├── docker-compose.yml # Orquestación  
+└── .env.example # Variables de entorno  
+
 
 ## 🚀 Instalación
 
