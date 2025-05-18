@@ -60,13 +60,13 @@ johnson_email_client/
     docker-compose up -d --build
     ```
 
-🌐 Acceso
-Frontend: http://localhost:8080
-API Docs: http://localhost:8000/docs
+🌐 Acceso  
+Frontend: http://localhost:8080  
+API Docs: http://localhost:8000/docs  
 
-🔌 Endpoints de la API
-POST /process-email
-Procesa un correo electrónico y devuelve clasificación y respuesta sugerida.
+🔌 Endpoints de la API  
+POST /process-email  
+Procesa un correo electrónico y devuelve clasificación y respuesta sugerida.  
 
 Request:
 
@@ -112,7 +112,15 @@ docker-compose down
 
 📊 Arquitectura
 
-graph TD
-    A[Frontend] -->|HTTP| B[API FastAPI]
-    B -->|Embeddings| C[OpenAI]
-    B -->|Vector Search| D[Pinecone]
+![Arquitectura del sistema](./images/Arquitectura.png)
+
+🤝 Contribución  
+Haz fork del proyecto  
+
+Crea tu rama (git checkout -b feature/nueva-funcionalidad)  
+
+Haz commit de tus cambios (git commit -am 'Add some feature')  
+
+Haz push a la rama (git push origin feature/nueva-funcionalidad)  
+
+Abre un Pull Request
