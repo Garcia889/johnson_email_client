@@ -112,15 +112,13 @@ docker-compose down
 
 📊 Arquitectura
 
-![Arquitectura del sistema](./images/Arquitectura.png)
+<div align="center">
+    <img src="./images/Arquitectura.png" alt="Arquitectura del sistema" width="200">
+</div>
 
 🤝 Contribución  
-Haz fork del proyecto  
-
-Crea tu rama (git checkout -b feature/nueva-funcionalidad)  
-
-Haz commit de tus cambios (git commit -am 'Add some feature')  
-
-Haz push a la rama (git push origin feature/nueva-funcionalidad)  
-
-Abre un Pull Request
+1. Haz fork del proyecto  
+2. Crea tu rama (git checkout -b feature/nueva-funcionalidad)  
+3. Haz commit de tus cambios (git commit -am 'Add some feature')  
+4. Haz push a la rama (git push origin feature/nueva-funcionalidad)  
+5. Abre un Pull Request
