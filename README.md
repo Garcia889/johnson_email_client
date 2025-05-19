@@ -1,7 +1,7 @@
-# 📧 Johnson email client - Documentación
+# 📧 Hermes mail - Documentación
 
 Un asistente de correo electrónico inteligente que clasifica mensajes y sugiere respuestas usando IA.  
-Se llama Johnson como uno de los agentes de Matrix.
+Antes se llamaba Johnson como uno de los agentes de Matrix pero al final me gustó más Hermes como el mensajero griego :P
 
 ## 🚀 Características principales
 
