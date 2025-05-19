@@ -116,7 +116,7 @@ docker-compose down
 📊 Arquitectura
 
 <div align="center">
-    <img src="./images/Arquitectura.png" alt="Arquitectura del sistema" width="300">
+    <img src="./images/Arquitectura.png" alt="Arquitectura del sistema" width="600">
 </div>
 
 🤝 Contribución  
